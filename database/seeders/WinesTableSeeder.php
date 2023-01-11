@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Wine;
@@ -16,10 +15,9 @@ class WinesTableSeeder extends Seeder
      */
     public function run()
     {
-        //echo('ciao');
         $data = file_get_contents('https://api.sampleapis.com/wines/reds');
         $data = json_decode($data);
-        foreach($data as $wine){
+        foreach ($data as $wine) {
             $new_wine = new Wine();
             $new_wine->name = $wine->wine;
             $new_wine->slug = Wine::generateSlug($new_wine->name);
@@ -28,7 +26,6 @@ class WinesTableSeeder extends Seeder
             $new_wine->location = $wine->location;
             $new_wine->image = $wine->image;
             $new_wine->save();
-            //dump($wine->wine);
         }
     }
 }
