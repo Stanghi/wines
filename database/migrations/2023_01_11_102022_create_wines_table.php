@@ -14,16 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('wines', function (Blueprint $table) {
-
-            /*
-            name
-            winery
-            rating
-            location
-            image
-            slug
-            */
-
             $table->id();
             $table->string('name', 30);
             $table->string('slug', 40);
