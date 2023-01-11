@@ -19,7 +19,7 @@
     <tbody>
         @foreach ($wines as $wine )
       <tr>
-        <th scope="row">{{$wine->id}}</th>
+        <th scope="row"><a href="{{route('detail', $wine->slug)}}">{{$wine->id}}</a></th>
         <td>{{$wine->name}}</td>
         <td>{{$wine->winery}}</td>
         <td>{{$wine->rating}}</td>
