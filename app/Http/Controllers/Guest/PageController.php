@@ -14,4 +14,9 @@ class PageController extends Controller
 
         return view('home',compact('wines'));
     }
+
+    public function detail($slug){
+        $wine = Wine::where('slug', $slug)->first();
+        return view('detail', compact('wine'));
+    }
 }
