@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('wines', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
-            $table->string('slug', 40);
-            $table->string('winery', 30);
+            $table->string('name', 70);
+            $table->string('slug', 80)->unique();
+            $table->string('winery', 100);
             $table->float('rating', 2, 1);
-            $table->string('location', 30);
+            $table->string('location', 100);
             $table->string('image');
             $table->timestamps();
         });
