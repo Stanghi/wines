@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->id();
             $table->string('name', 70);
-            $table->string('slug', 80);
+            $table->string('slug', 80)->unique();
             $table->string('winery', 100);
             $table->float('rating', 2, 1);
             $table->string('location', 100);

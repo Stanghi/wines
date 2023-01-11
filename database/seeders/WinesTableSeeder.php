@@ -22,7 +22,7 @@ class WinesTableSeeder extends Seeder
         foreach($data as $wine){
             $new_wine = new Wine();
             $new_wine->name = $wine->wine;
-            $new_wine->slug = Str::slug($new_wine->name, '-');
+            $new_wine->slug = Wine::generateSlug($new_wine->name);
             $new_wine->winery = $wine->winery;
             $new_wine->rating = $wine->rating->average;
             $new_wine->location = $wine->location;
