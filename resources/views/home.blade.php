@@ -25,7 +25,8 @@
       @endforeach
     </tbody>
   </table>
-
+  {{ $wines->links() }}
 </div>
+
 @endsection
 
