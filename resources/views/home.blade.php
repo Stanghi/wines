@@ -5,6 +5,8 @@
 
 <div class="container">
 
+    <h2>Totale vini: {{$wines->total()}}</h2>
+
 <table class="table">
     <thead>
       <tr>
